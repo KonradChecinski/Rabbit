@@ -32,8 +32,10 @@ module.exports = {
                 ...tailpress.colorMapper(
                     tailpress.theme("settings.color.palette", theme)
                 ),
-                rabbit1: "#00a2e5",
-                rabbit2: "#005fae",
+                rabbit1: "#01c1f3",
+                rabbit2: "#005dac",
+                rabbit3: "#d4effc",
+                rabbit4: "#00a3e5",
             },
             fontSize: {
                 ...tailpress.fontSizeMapper(

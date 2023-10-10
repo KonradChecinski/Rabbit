@@ -35,8 +35,8 @@ if (!function_exists('woocommerce_template_loop_product_title_override')) {
         //echo '<h2 class="test ' . esc_attr(apply_filters('woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title')) . '">' . get_the_title() . '</h2>';
         echo '
 				<div class="flex justify-center items-center flex-col">
-					<h2 class="text-2xl text-rabbit1 text-center">' . get_the_title() . ' </h2>
-				<p class="text-sm text-center w-56 h-14">' . $product->short_description . '</p>
+					<h2 class="text-xl text-rabbit1 text-center overflow-hidden max-h-16">' . get_the_title() . ' </h2>
+				<p class=" text-xs text-center w-56 max-h-4 overflow-hidden my-4">' . wp_filter_nohtml_kses($product->short_description) . '</p>
 				</div>
 				';
     }
@@ -60,6 +60,10 @@ do_action('woocommerce_before_shop_loop_item');
  */
 do_action('woocommerce_before_shop_loop_item_title');
 
+?>
+    <div class="h-full flex flex-col justify-between min-h-[150px]">
+
+        <?php
 /**
  * Hook: woocommerce_shop_loop_item_title.
  *
@@ -78,7 +82,9 @@ remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_lo
 
 add_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 5);
 do_action('woocommerce_after_shop_loop_item_title');
-
+?>
+    </div>
+    <?php
 /**
  * Hook: woocommerce_after_shop_loop_item.
  *

@@ -20,4 +20,5 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <ul
-    class="products columns-<?php echo esc_attr(wc_get_loop_prop('columns')); ?> [&_li]:!p-2 overflow-hidden [&_li]:!-mb-[10000px] [&_li]:!pb-[10000px]">
+    class="products columns-<?php echo esc_attr(wc_get_loop_prop('columns')); ?>   [&_img]:aspect-square [&_li]:min-h-[485px] [&_li]:shadow-lg hover:[&_li]:scale-105 [&_li>a]:min-h-[425px] [&_li>a]:block">
+    <!-- overflow-hidden [&_li]:!-mb-[10000px] [&_li]:!pb-[10000px] -->

@@ -27,7 +27,7 @@ if (!wc_review_ratings_enabled()) {
     return;
 }
 ?>
-<div class="flex justify-center items-center text-yellow-500">
+<div class="flex justify-center items-center text-yellow-500 mb-3 mt-1">
     <div class="-mb-2">
         <?php
 echo wc_get_rating_html($product->get_average_rating()); // WordPress.XSS.EscapeOutput.OutputNotEscaped.

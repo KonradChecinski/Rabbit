@@ -18,77 +18,85 @@
 
         <?php do_action('Rabbit_header');?>
 
-        <header class="z-50">
-            <div class="h-4 w-full bg-gradient-to-r from-rabbit1 to-rabbit2"></div>
-            <div class="h-14 w-full bg-white">
-                <div class="w-full h-14 bg-white flex justify-end items-center">
-                    <div class="w-80 h-8 mr-10 rounded-full bg-rabbit2 flex justify-between items-center">
-                        <div class="flex justify-start items-center rounded-full w-52 h-8 bg-rabbit1 relative">
-                            <input type="text" class="w-52 h-8 bg-transparent px-4 text-white border-none rounded-full">
-                            <div
-                                class="h-6 w-6 bg-orange-400 rounded-full flex justify-center items-center absolute right-1">
-                                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/4.png"
-                                    alt="Polubione" class="h-4 w-4">
+        <header class="">
+            <div class="h-4 w-full bg-gradient-to-r from-rabbit1 to-rabbit2 mb-[6rem]"></div>
+            <div id="header-menu" class="w-full z-50 fixed top-4 transition-all duration-300 ease-in-out">
+
+
+                <div class="h-14 w-full bg-white">
+                    <div class="w-full h-14 bg-white flex justify-end items-center">
+                        <div class="w-80 h-8 mr-10 rounded-full bg-rabbit4 flex justify-between items-center">
+                            <div class="flex justify-start items-center rounded-full w-52 h-8 bg-rabbit3 relative">
+                                <input type="text"
+                                    class="w-52 h-8 bg-transparent px-4 text-white border-none rounded-full">
+                                <div
+                                    class="h-6 w-6 bg-orange-400 rounded-full flex justify-center items-center absolute right-1">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/resources/images/4.png"
+                                        alt="Polubione" class="h-4 w-4">
+                                </div>
+
+                            </div>
+
+                            <div class="w-28 px-4 flex justify-between items-center invert">
+                                <a href="/moje-konto">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/resources/images/2.png"
+                                        alt="Użytkownik" class="h-4">
+                                </a>
+                                <a href="/ulubione">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/resources/images/1.png"
+                                        alt="Polubione" class="h-4">
+                                </a>
+                                <a href="/koszyk">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/resources/images/3.png"
+                                        alt="Koszyk" class="h-4">
+                                </a>
                             </div>
 
                         </div>
-
-                        <div class="w-28 px-4 flex justify-between items-center invert">
-                            <a href="/moje-konto">
-                                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/2.png"
-                                    alt="Użytkownik" class="h-4">
-                            </a>
-                            <a href="/ulubione">
-                                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/1.png"
-                                    alt="Polubione" class="h-4">
-                            </a>
-                            <a href="/koszyk">
-                                <img src="<?php echo get_template_directory_uri(); ?>/resources/images/3.png"
-                                    alt="Koszyk" class="h-4">
-                            </a>
-                        </div>
-
                     </div>
+                    <div id="logo-menu" class="inline-flex -mt-14  bg-white rounded-r-logo justify-center items-center shadow-lg
+                        [&]:h-40 [&]:w-56 [&_img]:h-36 [&_img]:w-36
+                        [&.fixedMenu]:!h-32 [&.fixedMenu]:!w-44 [&.fixedMenu_img]:!h-24 [&.fixedMenu_img]:!w-24
+                        transition-all duration-300 ease-in-out
+                        [&_img]:transition-all [&_img]:duration-300 [&_img]:ease-in-out">
+                        <!-- h-32 w-44 [&_img]:h-24 [&_img]:w-24 -->
+                        <div>
+                            <?php if (has_custom_logo()) {?>
+                            <?php the_custom_logo();?>
+                            <?php } else {?>
+                            <a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
+                                <?php echo get_bloginfo('name'); ?>
+                            </a>
+
+                            <p class="text-sm font-light text-gray-600">
+                                <?php echo get_bloginfo('description'); ?>
+                            </p>
+
+                            <?php }?>
+                        </div>
+                    </div>
+
                 </div>
                 <div
-                    class="inline-flex -mt-14 h-32 bg-white w-44 rounded-r-logo justify-center items-center shadow-lg [&_img]:h-24 [&_img]:w-24">
-
-                    <div>
-                        <?php if (has_custom_logo()) {?>
-                        <?php the_custom_logo();?>
-                        <?php } else {?>
-                        <a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
-                            <?php echo get_bloginfo('name'); ?>
-                        </a>
-
-                        <p class="text-sm font-light text-gray-600">
-                            <?php echo get_bloginfo('description'); ?>
-                        </p>
-
-                        <?php }?>
-                    </div>
-                </div>
-
-            </div>
-            <div class="w-full h-10 bg-rabbit1 pl-44 flex justify-center items-center lg:text-white">
-                <div class="flex justify-between items-center py-6">
-                    <div class="flex justify-between items-center">
-                        <div class="lg:hidden">
-                            <a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-                                <svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-                                        <g id="icon-shape">
-                                            <path
-                                                d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-                                                id="Combined-Shape"></path>
+                    class="w-full h-10 bg-gradient-to-l from-rabbit1 to-rabbit2 flex justify-center items-center lg:text-white shadow-lg">
+                    <div class="flex justify-between items-center py-6">
+                        <div class="flex justify-between items-center">
+                            <div class="lg:hidden">
+                                <a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
+                                    <svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                                            <g id="icon-shape">
+                                                <path
+                                                    d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
+                                                    id="Combined-Shape"></path>
+                                            </g>
                                         </g>
-                                    </g>
-                                </svg>
-                            </a>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <?php
+                        <?php
 
 wp_nav_menu(
     array(
@@ -130,12 +138,12 @@ wp_nav_menu(
 // );
 ?>
 
-                    <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+
+
                 </div>
-
-
             </div>
-
 
 
 

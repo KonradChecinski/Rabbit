@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
     // When the user scrolls down 20px from the top of the document, show the button
     const mybutton = document.getElementById("btn-chat");
     let mybuttonTimeout;
-    const scrollFunction = () => {
+    const scrollmybuttonFunction = () => {
         if (
             document.body.scrollTop > 150 ||
             document.documentElement.scrollTop > 150
@@ -38,7 +38,23 @@ window.addEventListener("load", function () {
             }, 500);
         }
     };
-    window.addEventListener("scroll", scrollFunction);
+    window.addEventListener("scroll", scrollmybuttonFunction);
+
+    const headerMenu = document.getElementById("header-menu");
+    const logoMenu = document.getElementById("logo-menu");
+    const scrollheaderMenuFunction = () => {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            headerMenu.classList.add("!top-0");
+            logoMenu.classList.add("fixedMenu");
+        } else {
+            headerMenu.classList.remove("!top-0");
+            logoMenu.classList.remove("fixedMenu");
+        }
+    };
+    window.addEventListener("scroll", scrollheaderMenuFunction);
 
     //     init Swiper:
     let swiperElement = document.querySelector(".swiper");

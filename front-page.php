@@ -58,22 +58,22 @@ endif;
     <div class="container flex justify-around items-center">
         <div class="flex flex-col justify-center items-center">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/incognito.png" alt="Dyskrecja"
-                class="h-16 invert">
+                class="h-16 invert mb-2">
             <p class="text-white font-bold">Dyskrecja</p>
         </div>
         <div class="flex flex-col justify-center items-center">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/check-mark.png" alt="Gwarancja"
-                class="h-16 invert">
+                class="h-16 invert mb-2">
             <p class="text-white font-bold">Gwarancja</p>
         </div>
         <div class="flex flex-col justify-center items-center">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/padlock.png"
-                alt="Bezpieczne Płatności" class="h-16 invert">
+                alt="Bezpieczne Płatności" class="h-16 invert mb-2">
             <p class="text-white font-bold">Bezpieczne Płatności</p>
         </div>
         <div class="flex flex-col justify-center items-center">
             <img src="<?php echo get_template_directory_uri(); ?>/resources/images/package.png" alt="Zwrot"
-                class="h-16 invert">
+                class="h-16 invert mb-2">
             <p class="text-white font-bold">Zwrot</p>
         </div>
     </div>
@@ -82,9 +82,10 @@ endif;
 <div class="my-8 flex flex-col justify-center items-center">
     <div class="my-8">
         <div class="container">
-            <h2 class="text-2xl text-rabbit1 font-bold text-center mb-24">Produkty popularne u naszych klientów</h2>
+            <h2 class="text-2xl text-rabbit4 font-bold text-center mb-24 mt-12">Produkty popularne u naszych klientów
+            </h2>
         </div>
-        <div class="">
+        <div class="container">
             <?php echo do_shortcode('[products limit="4" columns="4" best_selling="true" ]'); ?>
         </div>
     </div>
@@ -144,13 +145,13 @@ foreach ($collections as $term) {
         <h2 class="text-xl font-extrabold">Dla Początkujących</h2>
     </div>
     <div
-        class=" w-full h-[50rem] bg-gradient-to-r from-orange-500 to-yellow-500 flex justify-center items-center flex-col">
+        class=" w-full min-h-[50rem] py-8 bg-gradient-to-r from-orange-500 to-yellow-500 flex justify-center items-center flex-col">
         <div class="container flex flex-wrap justify-center items-center">
             <!-- <div class="w-52 h-64 bg-white"></div>
             <div class="w-52 h-64 bg-white"></div> -->
             <div class="[&_li]:bg-white  [&_li]:h-full [&_li]:flex ">
             </div>
-            <?php echo do_shortcode('[products limit="8" columns="4" category="bez-kategorii"
+            <?php echo do_shortcode('[products limit="6" columns="3" category="bez-kategorii"
             class="
             &#91;&_li&#93;:bg-white
             &#91;&_li&#93;:h-full
@@ -171,7 +172,7 @@ foreach ($collections as $term) {
     <div class="mt-16 mb-16">
         <h2 class="text-3xl font-extrabold">Co Myślą O Nas Inni?</h2>
     </div>
-    <div class=" w-full h-[20rem] bg-gradient-to-r from-rabbit2 to-rabbit1 flex justify-center items-center flex-col">
+    <div class="w-full bg-gradient-to-r from-rabbit2 to-rabbit1 flex justify-center items-center flex-col p-6">
         <div class="container flex justify-center items-center gap-6">
             <?php
 $rating = new WP_Query(array(
@@ -188,11 +189,11 @@ if ($rating->have_posts()):
         $rating->the_post();
         // print_r($rating);
         ?>
-            <div class="w-52 h-48 bg-white flex justify-between items-center flex-col">
+            <div class="w-72 h-56 bg-white flex justify-between items-center flex-col">
                 <div class="mt-5 px-4 text-center text-sm">
                     <?php the_excerpt();?>
                 </div>
-                <div class="mb-5 flex justify-center items-center">
+                <div class="mb-5 flex justify-center items-center gap-2">
                     <?php
         $ratingStar = get_post_meta(get_the_ID(), '_rating', true);
         for ($i = 0; $i < $ratingStar; $i++) {
@@ -223,37 +224,37 @@ endif;
     </div>
 
     <div
-        class="mt-[10rem] w-full h-[20rem] bg-gradient-to-r from-rabbit2 to-rabbit1 flex justify-center items-center flex-col text-white">
-        <div class="container flex justify-around items-center">
-            <div class="w-60 flex flex-col justify-center items-center text-center">
+        class="mt-[6rem] w-full min-h-[20rem] bg-gradient-to-r from-rabbit2 to-rabbit1 flex justify-center items-center flex-col text-white">
+        <div class="container flex justify-around items-stretch">
+            <div class="w-64 flex flex-col justify-start items-center text-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/resources/images/incognito.png" alt="Dyskrecja"
-                    class="h-16 invert">
-                <p class="text-xl mb-4">Dyskrecja</p>
+                    class="h-24 invert">
+                <p class="text-2xl mb-4">Dyskrecja</p>
                 <p>Bezpieczne i dyskretne pakowanie paczek i oraz bezpiecznych nazw na rachunkach ???? ???? ???? </p>
             </div>
-            <div class="w-60 flex flex-col justify-center items-center text-center">
+            <div class="w-64 flex flex-col justify-start items-center text-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/resources/images/check-mark.png" alt="Gwarancja"
-                    class="h-16 invert">
-                <p class="text-xl mb-4">Gwarancja</p>
+                    class="h-24 invert">
+                <p class="text-2xl mb-4">Gwarancja</p>
                 <p>Bez obaw, zajmiemy się każdym uszkodzonym produktem albo brakującym elementem</p>
             </div>
-            <div class="w-60 flex flex-col justify-center items-center text-center">
+            <div class="w-64 flex flex-col justify-start items-center text-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/resources/images/padlock.png"
-                    alt="Bezpieczne Płatności" class="h-16 invert">
-                <p class="text-xl mb-4">Bezpieczne Płatności</p>
+                    alt="Bezpieczne Płatności" class="h-24 invert">
+                <p class="text-2xl mb-4">Bezpieczne Płatności</p>
                 <p>Strona i płatności zabezpieczone SSL</p>
             </div>
-            <div class="w-60 flex flex-col justify-center items-center text-center">
+            <div class="w-64 flex flex-col justify-start items-center text-center">
                 <img src="<?php echo get_template_directory_uri(); ?>/resources/images/package.png" alt="Zwrot"
-                    class="h-16 invert">
-                <p class="text-xl mb-4">Zwrot</p>
+                    class="h-24 invert">
+                <p class="text-2xl mb-4">Zwrot</p>
                 <p>Strona i płatności zabezpieczone SSL</p>
             </div>
         </div>
     </div>
     <div class="mt-8 w-full flex justify-center items-center flex-col">
         <div class="container mt-8 mb-8 flex justify-center items-center flex-col">
-            <h2 class="w-44 text-2xl font-extrabold text-center">Masz pytania?</h2>
+            <h2 class="w-48 text-2xl font-extrabold text-center">Masz pytania?</h2>
             <p class="w-60 font-bold text-center">Fast Rabbit to wiodący lider na rynku zabawek erotycznych i
                 akcesoriów.</p>
             <div class="mt-4 flex gap-12">
